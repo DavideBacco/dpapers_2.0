@@ -1,0 +1,319 @@
+<header class="main-menu">
+
+    <div class="logo-wrapper">
+        <!-- Logo -->
+        <a href="index.html" title="Il mip logo">
+            <img src="src/assets/images/hero.jpg" alt="Il mio logo" class="logo">
+        </a>
+    </div>
+
+    <div class="site-nav-wrapper">
+        <nav class="main-nav">
+
+            <ul class="list-nav list-horizontal list-reset">
+
+                <li>
+                    <a href="" title="Home">Home</a>
+                </li>
+                
+                <li>
+                    <a href="" title="Product">Prodotto</a>
+                </li>
+                
+                <li>
+                    <a href="" title="Gallery">Galleria</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        
+    </div>
+    <button class="hamburgher-button" id="hamburgherBtn" type="button">
+        <div class="hamburgher-button-bar"></div>
+        <div class="hamburgher-button-bar"></div>
+        <div class="hamburgher-button-bar"></div>
+    </button>
+
+
+    <div id="myLinks" class="menu menu-q">
+            <ul class="list-reset child-decoration-none">
+                <li>
+                    <a href="index.html" title="Home">Home</a>
+                </li>
+                
+                <li>
+                    <a href="#title" title="Product" id="s">Players</a>
+                </li>
+                
+                <li>
+                    <a href="#gallery" title="Gallery" id="g">Galleria</a>
+                </li>
+            </ul>
+        
+    </div>
+    
+
+</header>
+
+
+
+
+
+<style>
+
+    
+
+    .list-reset{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-horizontal li {
+        display: inline-block;
+    }
+    .child-decoration-none a {
+        text-decoration: none;
+    }
+
+
+
+    .titolo{
+        font-weight: bold;
+        font-size: 4em;
+    }
+
+    .titolo2{
+        font-size: 3em;
+    }
+
+    .mt{
+        margin-top: 0;
+    }
+
+    .testo{
+        font-weight: 300;
+        font-size: 2em;
+
+    }
+
+    .main-section{
+        padding: 0  2em;
+    }
+
+    .color-section{
+        background-color: #000000 !important;
+    }
+
+
+    /* end utility class */
+
+    /* main menu e main nav */
+    .main-menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em 1em;
+    }
+
+
+
+    .main-nav{
+        display: none;
+    }
+
+
+    .main-nav-wrapper{
+        z-index: 2;
+        float: left;
+    }
+    .open-menu .main-nav{
+        display: block;
+    }
+
+    .main-nav ul li:not(:last-child){
+        margin: 0 0 1em 0;
+    }
+
+    .main-nav ul li a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+    }
+
+    .main-nav ul li a:hover{
+        color: rgb(174, 184, 183);
+    }
+    /* end main menu e main nav */
+
+    /* site logo */
+    .logo{
+        max-width: 6em;
+
+    }
+
+
+    /* end site logo */
+
+
+    .hamburgher-button{
+        border: 0;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        display: none;
+    }
+
+    .hamburgher-button *{
+        width: 2em;
+        height: .33em;
+        margin: .33em 0;
+        background-color: rgb(255, 255, 255);
+        transition: all .4s ease-in-out;
+    }
+
+    .menu-is-open .hamburgher-button > *:nth-child(1){
+        transform: rotate(-45deg) translate(-.45em, .45em);
+    }
+
+    .menu-is-open .hamburgher-button > *:nth-child(2){
+        opacity: 0;
+    }
+
+    .menu-is-open .hamburgher-button > *:nth-child(3){
+        transform: rotate(45deg) translate(-.45em, -.45em);
+    }
+
+    .menu{
+        display: none;
+        float: left;
+        align-items:center;
+        z-index: 2;
+        position: absolute;
+        right:13%;
+        top:6em;
+        line-height: 3em;
+        
+    }
+
+    .menu ul li a{
+        color: #ffffff !important;
+        
+        
+    }
+
+
+
+
+
+
+
+
+    /* Responsive */
+    @media screen and (min-width: 960px) {
+
+        .main-nav{
+            display: block;
+            align-items: flex-start;
+            
+            
+        }
+        .main-nav ul li{
+            display: inline-block;
+        }
+
+        .main-nav ul li:not(:last-child){
+            margin: 0 1em 0 0;
+        }
+
+        .btn-open-menu{
+            display: none;
+        }
+
+        .menu-q ul{
+            display: none;
+        }
+
+        .main-menu{
+            padding: 5px 15%;
+            
+        }
+        
+    }
+
+
+    @media screen and (max-width: 960px) {
+        .main-menu{
+            background-color: #000000;
+        }
+
+        .hamburgher-button{
+            display: block;
+            z-index: 2;
+        }
+
+        
+
+        .site-nav-wrapper ul {
+            display: block;
+            
+        }
+
+        
+
+        .menu-is-open{
+            overflow-y: hidden; 
+        }
+
+        
+
+        .menu-q{
+            position: absolute;
+            top:0;
+            right: 0;
+ 
+            background-color: rgb(0, 0, 0);
+
+            width: 25%;
+            height: 100vh;
+
+            padding: 6em 2em 0;
+
+            display: block;
+            z-index: 1;
+            animation: fadeIn 0.5s;
+            
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+          
+        
+    }
+
+    
+
+    @media screen and (max-width: 485px) {
+
+        .menu-is-open .site-nav-wrapper{
+            width: 18vh;
+        }
+    }
+
+
+    @media screen and (max-width: 366px) {
+        .menu-is-open .site-nav-wrapper{
+            width: 14vh;
+        }
+    }
+
+
+
+
+
+
+</style>

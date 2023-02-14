@@ -1,0 +1,107 @@
+---
+export interface Props {
+	title: string;
+    theDescription: string;
+    title2: string;
+    theDescription2: string;
+    title3: string;
+    theDescription3: string;
+    buttonLink: string;
+    buttonLink2: string;
+    buttonText: string;
+    buttonText2: string;
+    link1: string;
+    link2: string;
+    linkText1: string;
+    linkText2: string;
+    img1: string;
+    img2: string;
+    alt1: string;
+    alt2: string;
+}
+
+const { title, theDescription, title2, theDescription2, title3, theDescription3, buttonLink, buttonLink2, buttonText, buttonText2, link1, link2, linkText1, linkText2, img1, img2, alt1, alt2 } = Astro.props;
+---
+<div class="grid-nobackground">
+    <div class="text-column">
+        <h2>{title}</h2>
+        <p>{theDescription}</p>
+    </div>
+    <div class="button-column">
+        <button><a href={buttonLink}>{buttonText}</a></button>
+        <button><a href={buttonLink2}>{buttonText2}</a></button>
+    </div>
+</div>
+<div class="grid">
+    <div class="image-column">
+      <img src={img1} alt={alt1}>
+    </div>
+    <div class="text-column">
+      <h2>{title2}</h2>
+      <p>{theDescription2}</p>
+      <a href={link1}>{linkText1}</a>
+    </div>
+</div>
+<div class="grid">
+    <div class="text-column">
+        <h2>{title3}</h2>
+        <p>{theDescription3}</p>
+        <a href={link2}>{linkText2}</a>
+    </div>
+    <div class="image-column">
+        <img src={img2} alt={alt2}>
+    </div>
+</div>
+<style>
+    h2 {
+        color: white;
+    }
+    p {
+        color: white;
+    }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1E1E1E;
+    margin: 2em;
+  }
+  .grid-nobackground {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em;
+  }
+  button {
+    margin: 1em;
+  }
+  .button-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+  .image-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+  }
+
+  .image-column img{
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: auto; 
+  }
+  .image-column, .button-column,
+  .text-column {
+    flex: 1;
+    padding: 2em;
+  }
+  
+  @media (max-width: 600px) {
+    .grid {
+      flex-direction: column;
+    }
+  }
+</style>

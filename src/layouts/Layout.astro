@@ -1,0 +1,68 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body id="theBody">
+		<Header></Header>
+		<slot />
+		<script>
+			function hamBtn() {
+				var body = document.getElementById("theBody");
+				body.classList.toggle("menu-is-open");
+				
+				var x = document.getElementById("myLinks");
+		
+				if (x.style.display === "initial") {
+					x.style.display = "none";
+				} else {
+					x.style.display = "initial";
+				}
+			}
+		
+			document.getElementById("hamburgherBtn").addEventListener("click", hamBtn);
+			document.getElementById("s").addEventListener("click", hamBtn);
+			document.getElementById("g").addEventListener("click", hamBtn);
+			
+		</script>
+		
+		<Footer
+			img="#" 
+			altText="Logo" 
+			link1="#"
+			link1Text="link 1"
+			link2="#"
+			link2Text="link2"
+			link3="#"
+			link3Text="link3"
+		/>
+	</body>
+</html>
+<style is:global>
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #000000;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

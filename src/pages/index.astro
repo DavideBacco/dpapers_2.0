@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import TextSection1 from '../components/TextSection1.astro';
+import PreCardTitle from '../components/PreCardTitle.astro';
+import HorizontalCards from '../components/HorizontalCards.astro';
+import Hero from '../components/Hero.astro';
+import Hero2 from '../components/Hero2.astro';
+import Slider from '../components/Slider.astro';
+---
+
+<Layout title="">
+	<main>
+		<Hero
+			title="Il titolo della landing page"
+			href="#"
+			btntxt="BOTTONE"
+		>
+  		</Hero>
+
+		<Hero2
+			title="titolo del paragrafo"
+			href="#"
+			btntxt="ACQUISTA"
+			par="paragrafo che spiega quanto sia fantastico il contenut della landing page,aaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"	
+		>
+
+		</Hero2>
+		<TextSection1
+			title="Prova"
+			theDescription="provaprovaprova lorem ipsum eccetera compra ora money money"
+			link1="#"
+			link2="#"
+			linkText1="link1"
+			linkText2="link2"
+		/>
+		<PreCardTitle
+			title="Prova"
+			theDescription="provaprovaprova lorem ipsum eccetera compra ora money money"
+			buttonLink="#"
+			buttonText="Clicca qui"
+		/>
+		<div class="grid-container">
+			<Card
+				href="#"
+				title="Lorem"
+				body="Lorem ipsum bla bla bla bla bla"
+				img="src/assets/images/card.jpg"
+				altText="placeholder"
+				linkText="Pagina del fornitore"
+			/>
+			<Card
+				href="#"
+				title="Lorem"
+				body="Lorem ipsum bla bla bla bla bla"
+				img="src/assets/images/card.jpg"
+				altText="placeholder"
+				linkText="Pagina del fornitore"
+			/>
+			<Card
+				href="#"
+				title="Lorem"
+				body="Lorem ipsum bla bla bla bla bla"
+				img="src/assets/images/card.jpg"
+				altText="placeholder"
+				linkText="Pagina del fornitore"
+			/>
+			<Card
+				href="#"
+				title="Lorem"
+				body="Lorem ipsum bla bla bla bla bla"
+				img="src/assets/images/card.jpg"
+				altText="placeholder"
+				linkText="Pagina del fornitore"
+			/>
+		</div>
+		<HorizontalCards
+		title="Prova"
+    	theDescription="Prova prova prova prova prova provaProva prova prova prova prova provaProva prova prova prova prova provaProva prova prova prova prova prova"
+    	title2= "Prova"
+    	theDescription2="Prova"
+    	title3="Prova"
+		theDescription3="Prova"
+		buttonLink="#"
+		buttonLink2="#"
+		buttonText="Click"
+		buttonText2="Click"
+		link1="#"
+		link2="#"
+		linkText1="Link"
+		linkText2="Link"
+		img1="src/assets/images/card.jpg"
+		img2="src/assets/images/card.jpg"
+		alt1="Immagine placeholder"
+		alt2="Immagine placeholder"
+		/>
+		<Slider></Slider>
+	</main>
+	
+</Layout>
+
+<style>
+	body{
+		margin: 0;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.grid-container{
+		display: grid;
+  		grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  		grid-template-rows: auto;
+  		grid-gap: 5em;
+  		padding: 7em;
+  		color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	padding: 6em;
+  }
+}
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	padding: 5em;
+  }
+}
+@media (max-width: 425px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	padding: 3em;
+	grid-gap: 3em;
+  }
+}
+@media (max-width: 320px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	padding: 2em;
+	grid-gap: 2em;
+  }
+}
+
+</style>

@@ -1,0 +1,84 @@
+---
+export interface Props {
+  title?: string;
+  image?: string | any; // TODO: find HTMLElementProps
+  href?: string;
+  btntxt?: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  image = await Astro.slots.render('image'),
+  href = await Astro.slots.render('href'),
+  btntxt = await Astro.slots.render('btntxt'),
+} = Astro.props;
+---
+
+            <div class="hero-image">
+                <div class="barra">
+                    <h4 class="tit-camp">Il titolo della tua campagna</h4>
+                </div>
+                <h1 class="hero-title">{title}</h1>
+                <div class="btn-position">
+                    <a href={href} class="btn">{btntxt}</a>
+                </div>
+            </div>
+
+<style>
+
+    .barra{
+        background-color: white;
+        opacity: 0.5;
+    }
+    .tit-camp{
+        padding: 0 15%;
+    }
+    
+    .hero-image{
+        position: relative;
+        background-image: url("src/assets/images/hero.jpg");
+        height: 30vh;
+        width: 100%;
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .hero-title{
+        font-size: 4em;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        margin-top: 0;
+    }
+
+    .btn-position{
+        text-align: center;
+        top: 0;
+    }
+    .btn{
+        box-shadow:inset 0px 1px 0px 0px #54a3f7;
+        background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+        background-color:#007dc1;
+        border-radius:3px;
+        border:1px solid #124d77;
+        cursor:pointer;
+        color:#ffffff;
+        font-size:18px;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #154682;
+    }
+    .btn:hover {
+        background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+        background-color:#0061a7;
+    }
+    .btn:active {
+        position:relative;
+        top:1px;
+    }
+    
+
+</style>

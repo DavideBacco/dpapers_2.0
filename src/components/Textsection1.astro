@@ -1,0 +1,52 @@
+---
+export interface Props {
+	title: string;
+    theDescription: string;
+    link1: string;
+    link2: string;
+    linkText1: string;
+    linkText2: string;
+}
+
+const { title, theDescription, link1, link2, linkText1, linkText2 } = Astro.props;
+---
+<div class="text-section">
+    <h2>{title}</h2>
+    <p>{theDescription}</p>
+    <div class="links">
+      <a href={link1}>{linkText1}</a>
+      <a href={link2}>{linkText2}</a>
+    </div>
+  </div>
+<style>
+  h2 {
+    font-weight: bold;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+  .text-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.links a {
+  margin: 20px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .text-section {
+    text-align: left;
+    padding: 10px;
+  }
+
+}
+</style>

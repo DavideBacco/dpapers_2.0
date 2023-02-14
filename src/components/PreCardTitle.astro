@@ -1,0 +1,38 @@
+---
+export interface Props {
+	title: string;
+    theDescription: string;
+    buttonLink: string;
+    buttonText: string;
+}
+
+const { title, theDescription, buttonLink, buttonText } = Astro.props;
+---
+<div class="text-section">
+    <h2>{title}</h2>
+    <p>{theDescription}</p>
+    <button><a href={buttonLink}>{buttonText}</a></button>
+  </div>
+<style>
+  h2 {
+    font-weight: bold;
+    color: white;
+  }
+  p {
+    color: white;
+  }
+  .text-section {
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 600px) {
+  .text-section {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .links a {
+    margin: 10px;
+  }
+}
+</style>
